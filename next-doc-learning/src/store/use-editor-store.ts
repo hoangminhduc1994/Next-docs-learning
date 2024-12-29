@@ -6,7 +6,12 @@ interface EditorState {
     setEditor: (editor: Editor | null) => void;
 }
 
-export const useEditorStore = create<EditorState>((set) => ({
+export const useEditorStore = create<EditorState>((set, get) => ({
     editor: null,
-    setEditor: (editor) => set({ editor }),
+    setEditor: (editor) => {
+        // Only update the state if the editor instance has changed
+        if (get().editor !== editor) {
+            set({ editor });
+        }
+    },
 }))
