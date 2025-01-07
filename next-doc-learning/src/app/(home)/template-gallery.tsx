@@ -50,6 +50,7 @@ export const TemplateGallery = () => {
                                     <button
                                     disabled={isCreating}
                                     onClick={() => onTemplateClick(template.label, "")}
+                                    // Todo: add proper content
                                     style={{
                                         backgroundImage: `url(${template.imageUrl})`,
                                         backgroundSize: "cover",
