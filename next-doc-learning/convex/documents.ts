@@ -121,3 +121,10 @@ export const get = query({
     },  
     }
   );
+
+  export const getById = query({
+    args: {id: v.id("documents")},
+    handler: async (ctx, {id}) => {
+      return await ctx.db.get(id);
+    },
+  })
