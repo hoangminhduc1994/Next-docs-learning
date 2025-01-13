@@ -89,7 +89,7 @@ export const get = query({
         throw new ConvexError("Document not found");
       }
       const isOwner = document.ownerId === user.subject;
-      const isOrganizationMember = document.organizationId === organizationId;
+      const isOrganizationMember = !!(document.organizationId && document.organizationId === organizationId);
       if (!isOwner && !isOrganizationMember) {
         throw new ConvexError("Unauthorized");
       }
@@ -109,12 +109,16 @@ export const get = query({
       if (!user) {
         throw new ConvexError("Unauthorized");
       }
+      const organizationId = (user.organization_id ?? undefined) as
+      | string
+      | undefined;
       const document = await ctx.db.get(args.id)
       if (!document) {
         throw new ConvexError("Document not found");
       }
       const isOwner = document.ownerId === user.subject;
-      if (!isOwner) {
+      const isOrganizationMember = !!(document.organizationId && document.organizationId === organizationId);
+      if (!isOwner && !isOrganizationMember) {
         throw new ConvexError("Unauthorized");
       }
       return await ctx.db.patch(args.id, {title: args.title})
