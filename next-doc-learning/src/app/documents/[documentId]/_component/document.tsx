@@ -6,7 +6,7 @@ import { Toolbar } from "./toolbar";
 import { Navbar } from "./navbar";
 import { Room } from "./room";
 import { Preloaded, usePreloadedQuery } from "convex/react";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "../../../../../convex/_generated/api";
 
 interface DocumentProps {
   preloadedDocument: Preloaded<typeof api.documents.getById>;

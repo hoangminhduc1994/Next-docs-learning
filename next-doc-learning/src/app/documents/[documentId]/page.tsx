@@ -1,7 +1,7 @@
 import React from "react";
 import { preloadQuery} from "convex/nextjs";
 import { Id } from "../../../../convex/_generated/dataModel";
-import { Document } from "./document";
+import { Document } from "./_component/document";
 import { auth } from "@clerk/nextjs/server";
 import { api } from "../../../../convex/_generated/api";
 

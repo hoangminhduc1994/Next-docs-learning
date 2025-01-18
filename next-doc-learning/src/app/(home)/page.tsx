@@ -2,11 +2,11 @@
 
 import React from "react";
 
-import { Navbar } from "./navbar";
-import { TemplateGallery } from "./template-gallery";
+import { Navbar } from "./_component/navbar"; 
+import { TemplateGallery } from "./_component/template-gallery"; 
 import { usePaginatedQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
-import { DocumentsTable } from "./documents-table";
+import { DocumentsTable } from "./_component/documents-table";
 import { useSearchParam } from "@/hooks/use-search-param";
 
 const Home = () => {

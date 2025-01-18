@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { DocumentInput } from "./document-input"
+import { DocumentInput } from "./document-input"; 
 import { Menubar,
     MenubarContent,
     MenubarItem,
@@ -20,9 +20,9 @@ import { Avatars } from "./avatars";
 import { useEditorStore } from "@/store/use-editor-store";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Inbox } from "./inbox";
-import { Doc } from "../../../../convex/_generated/dataModel";
+import { Doc } from "../../../../../convex/_generated/dataModel";
 import { useMutation } from "convex/react";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "../../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { RenameDialog } from "@/components/rename-dialog";
